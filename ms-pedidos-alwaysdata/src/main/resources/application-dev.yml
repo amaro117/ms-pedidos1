@@ -1,0 +1,22 @@
+server:
+  port: 8082
+
+ms:
+  productos:
+    url: ${MS_PRODUCTOS_URL:http://localhost:8081}
+
+spring:
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:ms_pedidos}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+logging:
+  level:
+    root: INFO
+    com.duoc.ms_pedidos: DEBUG
